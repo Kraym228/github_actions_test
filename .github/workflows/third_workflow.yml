@@ -6,10 +6,15 @@ jobs:
     run-first-command: #name
         runs-on: ubuntu-latest #os 
         steps:
-            - name: Display some Text 
-              run: echo "Some Text" 
-            - name: List Files and Copy Repo
+            - name: List Files
               run: ls -a
-            - uses: actions/checkout@v4  
+            #- uses: actions/checkout@v4  # Этот шаг использует GitHub Actions для клонирования репозитория
+            - name: Copy Files
+              run: |
+                git init 
+                git remove add origin 'https://@GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY/github_actions_test.git'
+                git fetch origin 
+                git checkout main 
+              
             - name: List Files
               run: ls -a
