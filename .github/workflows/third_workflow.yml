@@ -8,7 +8,8 @@ jobs:
         steps:
             - name: Display some Text 
               run: echo "Some Text" 
-            - name: Command in Miltiline 
-              run: |
-                pwd
-                ls -a  
+            - name: List Files and Copy Repo
+              run: ls -a
+            - uses: actions/checkout@v4  
+            - name: List Files
+              run: ls -a
