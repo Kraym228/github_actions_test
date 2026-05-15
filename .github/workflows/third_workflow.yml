@@ -7,7 +7,7 @@ jobs:
         runs-on: ubuntu-latest #os 
         steps:
             - name: List Files
-              run: ls -a
+              run: lsfsa -a
             #- uses: actions/checkout@v4  # Этот шаг использует GitHub Actions для клонирования репозитория
             - name: Copy Files
               run: |
