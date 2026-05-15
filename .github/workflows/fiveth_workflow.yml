@@ -1,6 +1,10 @@
 name: Fifth Workflow 
 
-on: [push, issues, pull_request] # event 
+on: 
+    issues:
+        types: [edited, deleted] # event 
+    pull_request:
+        types: [assigned, closed]
 
 jobs:
     run-first-command: #name
