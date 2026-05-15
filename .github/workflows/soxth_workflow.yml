@@ -1,0 +1,22 @@
+name: Six Workflow 
+
+on: 
+    push:
+        branches:
+          - main # только при пуше в main
+          - "page/*" # page/about page/blog page/contacnt and t.d  page/category/test - не сработает
+          - "page/**" # page/category/test - сработает
+          - "!page/blog" # игнорирует page/blog. Если поставить выше, то не сработает. Нужно по логике ставить 
+       # tags:
+        #  - "v1.*" #v1.1 v1.2 
+        #  - "!v1.2.1" # при пуше в данной ветку не будет запускаться job
+        paths:
+          - "**.html" #паттерны, который использует все html-файлы в репозитории-
+jobs:
+    run-first-command: #name
+        runs-on: ubuntu-latest #os 
+        steps:
+            - name: Event Vars 
+              run: |
+                echo $GITHUB_SHA
+                echo $GITHUB_REF
