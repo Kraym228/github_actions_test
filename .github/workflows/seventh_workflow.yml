@@ -2,7 +2,7 @@ name: Seventh Workflow
 
 on: 
     schedule:
-      - cron: "*/2 * * * *"  # https://crontab.cronhub.io/
+      - cron: "*/5 * * * *"  # https://crontab.cronhub.io/
    
 jobs:
     run-first-command: #name
