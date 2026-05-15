@@ -1,0 +1,14 @@
+name: Fourth Workflow 
+
+on: 
+    workflow_run:
+        workflows: ['Thrid Workflow'] # запуск при завершении first work. Два состояния ин прогресс и в концеbranches: 
+        types:
+            - completed
+
+jobs:
+    hello-command: #name
+        runs-on: ubuntu-latest #os 
+        steps:
+            - name: List Files
+              run: echo 'Hello'
