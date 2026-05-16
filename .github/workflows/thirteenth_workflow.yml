@@ -6,21 +6,19 @@ jobs:
     #failure() success() always() cancelled()
     job: 
         runs-on: ubuntu-latest
-        steps:
-            - name: First Step 
-              run: exit 123
-            - name: Runs on Cancelled 
-              if: ${{cancelled()}}
-              run: echo 'Runs on Cancelled'
-            - name: Runs on any case 
-              if: ${{always()}}
-              run: echo 'Runs on any case'
-            - name: Runs on any Success 
-              if: ${{success()}}
-              run: echo 'uns on any Success'
-            - name: Runs on any Failure 
-              if: ${{failure()}}
-              run: echo 'Runs on any Failure' # на предыдущем ошибка если          
+        steps:           
+          - name: Runs on Cancelled 
+            if: ${{cancelled()}}
+            run: echo 'Runs on Cancelled'
+          - name: Runs on any case 
+            if: ${{always()}}
+            run: echo 'Runs on any case'
+          - name: Runs on any Success 
+            if: ${{success()}}
+            run: echo 'uns on any Success'
+          - name: Runs on any Failure 
+            if: ${{failure()}}
+            run: echo 'Runs on any Failure' # на предыдущем ошибка если          
     second-job:
         runs-on: ubuntu-latest
         needs: job #ждет заврешние предыдущего 
