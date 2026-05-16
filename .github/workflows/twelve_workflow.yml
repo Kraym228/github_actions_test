@@ -7,6 +7,7 @@ on: [push]
 jobs:
     run-first-command: #name
         runs-on: ubuntu-latest #os 
+        environment: "production"
         steps:          
             - name: Our Vars & Secrets 
               run: |
