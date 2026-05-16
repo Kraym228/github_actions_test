@@ -8,7 +8,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
           - name: Failure Step
-            id: error-step3
+            id: error-step
             run: exit 1     
           - name: Runs on Cancelled 
             if: ${{cancelled()}}
