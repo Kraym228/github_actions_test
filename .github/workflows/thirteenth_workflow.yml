@@ -8,7 +8,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: First Step 
-              run: exit 1 
+              run: exit  
             - name: Runs on Cancelled 
               if: ${{cancelled()}}
               run: echo 'Runs on Cancelled'
@@ -20,5 +20,11 @@ jobs:
               run: echo 'uns on any Success'
             - name: Runs on any Failure 
               if: ${{failure()}}
-              run: echo 'Runs on any Failure' # на предыдущем ошибка если             
+              run: echo 'Runs on any Failure' # на предыдущем ошибка если          
+    second-job:
+        runs-on: ubuntu-latest
+        needs: job #ждет заврешние предыдущего 
+        if: ${{failure()}}
+        steps:
+            - run : echo 'Job was failed'
              
