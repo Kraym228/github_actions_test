@@ -7,7 +7,7 @@ on: [push]
 jobs:
     run-first-command: #name
         runs-on: ubuntu-latest #os 
-        environment: "production"
+        environment: "staging" # без него будет вывод секретов. Тут зависит от приоритетов
         steps:          
             - name: Our Vars & Secrets 
               run: |
