@@ -1,0 +1,17 @@
+name: Ten Workflow 
+
+on: push
+
+
+jobs:
+    run-first-command: #name
+        runs-on: ubuntu-latest #os 
+        steps:
+            - name: Contexts and Expressions 
+              id: context 
+              run: |
+                echo ${{toJson(github)}}
+                echo ${{toJson(runner)}}
+                echo ${{toJson(job)}}
+                echo ${{toJson(steps)}}
+                
