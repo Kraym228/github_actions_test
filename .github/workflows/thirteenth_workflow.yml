@@ -8,7 +8,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: First Step 
-              run: exit 1
+              run: exit 123
             - name: Runs on Cancelled 
               if: ${{cancelled()}}
               run: echo 'Runs on Cancelled'
