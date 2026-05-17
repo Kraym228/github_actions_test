@@ -6,7 +6,8 @@ jobs:
         strategy:
             matrix:
                 node-version: [10, 14, 18]
-        runs-on: ubuntu-latest 
+                os: [ubuntu-latest, windows-latest]
+        runs-on: ${{matrix.os}} 
         steps: 
             - run: node -v 
             - uses: actions/setup-node@v3
