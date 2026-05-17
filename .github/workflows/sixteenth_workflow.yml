@@ -11,6 +11,8 @@ jobs:
                 include:
                     - os: macos-latest
                       node-version: 17
+                    - os: ubuntu-latest
+                      status: active #передаем еще параметр active, будет написано версия, active, ubuntu 
                 exclude:
                     - os: ubuntu-latest
                       node-version: 14 #убирает тест убунту 14 версии и оставляет 10 и 18
