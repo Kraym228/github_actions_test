@@ -12,3 +12,7 @@ jobs:
               run: |
                 echo $GITHUB_SHA
                 echo $GITHUB_REF
+    call-external-workflow:
+      uses: KRAYM228/test/.github/workflows/workflow_shablon #id указываем репозитория который нужен( логин, название KRAYM228/Название репозитория).Внешний репозттории
+      secrets:
+        PASSWORD: ${{secrets.PASSWORD}}
