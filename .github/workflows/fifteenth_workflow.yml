@@ -20,10 +20,10 @@ jobs:
               uses: actions/download-artifact@v4
               with:
                 name: math-result
-                path: math-result.txt
+
             - name: Math expression
               run: |
-                value=$(cat math-result/math-result.txt)
+                value=$(cat math-result.txt)
                 expr $value * 2 > math-result.txt
             - name: Upload Artifact result
               uses: actions/upload-artifact@v4
