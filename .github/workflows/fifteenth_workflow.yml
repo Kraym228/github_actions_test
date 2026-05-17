@@ -23,5 +23,5 @@ jobs:
                 path: math-result # Скачали артифакт
             - name: Print file
               run: |
-                value=$(cat math-result.txt)
+                value=$(cat math-result/math-result.txt)
                 echo "$value"
