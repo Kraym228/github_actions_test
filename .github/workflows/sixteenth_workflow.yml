@@ -8,6 +8,12 @@ jobs:
             matrix:
                 node-version: [10, 14, 18]
                 os: [ubuntu-latest, windows-latest]
+                include:
+                    - os: macos-latest
+                      node-version: 17
+                exclude:
+                    - os: ubuntu-latest
+                      node-version: 14 #убирает тест убунту 14 версии и оставляет 10 и 18
             fail-fast: false # если текущий job вернул неудачу, некст job отменяется. Чтобы исправить добавляем этот пункт. Будет дальше тесты запускать 
             max-parallel: 2 #одновременно будет выполняться 2
        
